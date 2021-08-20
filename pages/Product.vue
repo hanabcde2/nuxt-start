@@ -27,16 +27,15 @@
 </template>
 <script>
 
-import axios from 'axios'
 import SearchInput from '~/components/SearchInput.vue';
-import { fetchProductByKeyword } from '@/api/index'
+import { fetchProductByKeyword,fetchProducts } from '@/api/index'
 // import ProductList from '~/components/ProductList.vue'
 
 export default {
   components: { SearchInput },
   // components:{ ProductList },
     async asyncData() {
-    const response = await axios.get(`http://localhost:3000/products`);
+    const response = await fetchProducts()
     const products = response.data.map( item => ({
       ...item,
       imageUrl: `${item.imageUrl}?random=${Math.random()}`
