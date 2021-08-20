@@ -24,16 +24,10 @@ export default {
     },
 }
 </script>
-
-<style>
+<style lang="scss" scoped>
 .input{
     height: 100%;
     width: 100%;
- 
-}
-.input:focus{
-    border: 0px solid red !important;
-    
 }
 
 .btn{
@@ -50,7 +44,6 @@ export default {
     border: 1px solid black;
     height: 40px;
     width: 250px;
-  
     position: relative;
 }
 </style>
