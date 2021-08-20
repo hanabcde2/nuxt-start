@@ -34,11 +34,10 @@ export default {
     return {product}
   },
   methods: {
-  async  addToItem(){
-      const response = await createCartItem(this.product);
-      console.log(response)
-      // this.$store.commit('addCartItem', response);
-      // this.$router.push('/cart');
+  async addToItem(){
+      const {data} = await createCartItem(this.product);
+      this.$store.commit('addCartItem', data);
+      this.$router.push('/cart');
     }
   }
 }

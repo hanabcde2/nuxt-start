@@ -73,4 +73,11 @@ export default {
   server: {
     port: process.env.NODE_ENV === 'production' ? null : 8080,
   },
+
+  // env config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production' 
+    ? 'https://my-json-server.typicode.com/hanabcde2/back-api'
+    : 'http://localhost:3000' ,
+  }
 }
