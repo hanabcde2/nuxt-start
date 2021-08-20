@@ -24,7 +24,7 @@ export default {
     },
 }
 </script>
-<style lang="scss" scoped>
+<style>
 .input{
     height: 100%;
     width: 100%;
@@ -34,11 +34,7 @@ export default {
     position:absolute;
     height: 95% !important;
     top:1px;
-    right: 1px;
-
-    
-
-
+    right: 1px; 
 }
 .content{
     border: 1px solid black;

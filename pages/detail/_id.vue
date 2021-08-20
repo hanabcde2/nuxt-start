@@ -29,6 +29,7 @@ import { fetchProductById, createCartItem } from '@/api/index'
 export default {
   async asyncData({ params }){
     let product = await fetchProductById(params.id);
+    
     product = product.data
    
     return {product}
