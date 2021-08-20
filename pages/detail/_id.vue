@@ -33,19 +33,35 @@ export default {
     product = product.data
     return {product}
   }, 
-  head: {
-    title: 'Shopping Item Detail',
-    meta: [
-      { 
-      hid: 'description', 
-      name: 'description',
-      content: '이 상품은 ~~입니다' 
-      },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+  head(){
+    return{
+        title: `Shopping Item Detail - ${this.product.name}`,
+        meta: [
+          { 
+          hid: 'description', 
+          name: 'description',
+          content: '이 상품은 ~~입니다' 
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: '상품 상세 페이지'
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: '상품의 상세 정보를 확인해보세요'
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: 'http://placeimg.com/640/480/fashion'
+          },
+         
+        ],
+    }
   },
+
   methods: {
   async addToItem(){
       const {data} = await createCartItem(this.product);
