@@ -31,8 +31,20 @@ export default {
     let product = await fetchProductById(params.id);
     
     product = product.data
-   
     return {product}
+  }, 
+  head: {
+    title: 'Shopping Item Detail',
+    meta: [
+      { 
+      hid: 'description', 
+      name: 'description',
+      content: '이 상품은 ~~입니다' 
+      },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ]
   },
   methods: {
   async addToItem(){
@@ -41,6 +53,7 @@ export default {
       this.$router.push('/cart');
     }
   }
+
 }
 </script>
 
